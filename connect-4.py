@@ -40,8 +40,14 @@ print("""
 print("Welcome to Connect 4.")
 player_1 = input("Player 1 please enter cool gamer tag: ")
 player_2 = input("Player 2 please enter cool gamer tag: ")
-r = int(input("Please enter number of rows the board should have: "))
-c = int(input("Please enter number of columns the board should have: "))
+k = 0
+while k == 0:
+    try:
+        r = int(input("Please enter number of rows the board should have: "))
+        c = int(input("Please enter number of columns the board should have: "))
+        k = 1
+    except ValueError:
+        print("Invalid value.")
 board1 = Board(r, c)
 board1.print_board()
 print("This is your board. ")
